@@ -6,6 +6,7 @@
   "main": "src/utils.js",
   "scripts": {
     "start": "live-server src/",
+    "test": "mocha src/**/*.{test,spec}.js",
     "format": "prettier --write .",
     "lint:js": "eslint .",
     "lint:css": "stylelint **/*.css",
@@ -16,10 +17,12 @@
   "devDependencies": {
     "@eslint/js": "^8.56.0",
     "eslint": "^8.56.0",
+    "expect.js": "^0.3.1",
     "globals": "^13.24.0",
     "htmlhint": "^1.1.4",
     "live-server": "^1.2.2",
     "markdownlint-cli2": "^0.11.0",
+    "mocha": "^10.2.0",
     "prettier": "^3.1.1",
     "stylelint": "^16.1.0"
   }

@@ -10,7 +10,7 @@ npm install @diyjs/utils
 
 ### `isDefined(value)`
 
-Checks if `value` is not `undefined`.
+Checks if `value` is defined (not `undefined`).
 
 ```js
 isDefined(null); // => true
@@ -79,6 +79,7 @@ Does nothing (no operation). Good as a default parameter.
 
 ```js
 noop(); // => undefined
+noop(3); // => undefined
 ```
 
 ### `identity(value)`
@@ -115,13 +116,15 @@ add2(1); // => 3
 
 ### `pipe(...funcs)`
 
-Performs left-to-right function composition.
+Performs left-to-right
+[function composition](<https://en.wikipedia.org/wiki/Function_composition_(computer_science)>).
 
 ```js
 const sum = (a, b) => a + b;
 const double = (x) => x * 2;
-const foo = pipe(sum, double, console.log);
-foo(1, 2); // logs 6
+const customMessage = (x) => `result: ${x}`;
+const foo = pipe(sum, double, customMessage);
+foo(1, 2); // => 'result: 6'
 ```
 
 ## Object helpers
